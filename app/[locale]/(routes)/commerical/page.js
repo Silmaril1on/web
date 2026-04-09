@@ -1,5 +1,5 @@
-import Commercial from '@/app/[locale]/layout/pages/commercials/Commercial'
 import React from 'react'
+import Commercial from './Commercial'
 
 const CommercialPage = () => {
   return (

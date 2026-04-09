@@ -2,9 +2,10 @@ import "./globals.css";
 import { Rationale, Montserrat_Alternates, Michroma } from "next/font/google";
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
-import {hasLocale, NextIntlClientProvider} from "next-intl"
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { Teko, Jost } from "next/font/google";
 
 const rationale = Rationale({
   variable: "--font-rationale",
@@ -14,9 +15,21 @@ const rationale = Rationale({
 
 const michroma = Michroma({
   variable: "--font-michroma",
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const josh = Jost({
+  variable: "--font-jost",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const teko = Teko({
+  variable: "--font-teko",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const montserratAlternates = Montserrat_Alternates({
   variable: "--font-montserrat-alternates",
@@ -39,13 +52,13 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang="en">
       <body
-        className={`${rationale.variable} ${montserratAlternates.variable} ${michroma.variable} antialiased text-gold min-h-screen flex flex-col`}
+        className={`${rationale.variable} ${josh.variable} ${teko.variable} ${montserratAlternates.variable} ${michroma.variable} antialiased text-gold min-h-screen flex flex-col`}
       >
-       <NextIntlClientProvider>
-         <Header />
-           {children}
+        <NextIntlClientProvider>
+          <Header />
+          {children}
           <Footer />
-       </NextIntlClientProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

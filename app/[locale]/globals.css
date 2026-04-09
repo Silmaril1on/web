@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "MarkGeo";
+  src: url("/fonts/MarkGEO-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-cream: #fcf5df;
-  --color-papaya: #FF8000;
+  --color-papaya: #ff8000;
   --color-yellow: #ffd700;
   --color-green: #4affd7;
   --color-orange: #d99d00;
@@ -20,13 +28,21 @@
   --font-michroma: var(--font-michroma);
 }
 
+.main {
+  font-family: var(--font-teko);
+}
+
+.no-main {
+  font-family: var(--font-jost);
+}
+
 .tertiary {
   font-family: var(--font-michroma);
 }
 
 body {
   background: black;
-   font-family: var(--font-rationale);
+  font-family: var(--font-rationale);
 }
 
 .primary {
@@ -35,6 +51,14 @@ body {
 
 .secondary {
   font-family: var(--font-montserrat-alternates);
+}
+
+.menulink-gradient {
+  background: linear-gradient(90deg, #ffd700, #ff8000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 @layer utilities {
@@ -52,17 +76,34 @@ b {
   color: #fff;
   font-weight: 700;
   animation: tubelight 5s linear infinite;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes tubelight {
-  0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92% {
-     color: #fcba1356;
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #fcba1356;
     text-shadow: none;
   }
 
-  18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100% {
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
     color: #fcb913;
     text-shadow:
       0 0 8px #fcba13af,
@@ -86,7 +127,12 @@ b {
   pointer-events: none;
   color: transparent;
   /* left -> right gradient (tight bright band in center) */
-  background: linear-gradient(90deg, rgba(255,255,255,0) 10%, white 20%, rgba(255,255,255,0) 10%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgb(255, 255, 255) 20%,
+    rgba(255, 255, 255, 0) 10%
+  );
   background-size: 200% 100%;
   background-repeat: no-repeat;
   /* start fully off to the left */
@@ -125,11 +171,14 @@ b {
     background-position: 100% 0;
     opacity: 0;
   }
-
 }
 
 .box-clip {
   clip-path: polygon(100% 0, 100% 31%, 38% 31%, 38% 100%, 0 100%, 0% 60%, 0 0);
+}
+
+.slash-clip {
+  clip-path: polygon(0 0, 100% 0, 91% 64%, 7% 64%);
 }
 
 .masky {
@@ -156,5 +205,3 @@ b {
     mask-position: 100% 0%;
   }
 }
-
-
