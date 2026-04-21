@@ -44,7 +44,7 @@ const SoundCloudPoster = () => {
         </div>
         {/* EPISODE NUMBER */}
         <div className="absolute top-25 left-71 w-14 center border border-cream/20 rounded-sm backdrop-blur-lg bg-black/20 ">
-          <h1 className="text-3xl font-bold ">019</h1>
+          <h1 className="text-3xl font-bold ">020</h1>
         </div>
         {/* LOGO */}
         <div className="absolute top-5 right-21 sepia">

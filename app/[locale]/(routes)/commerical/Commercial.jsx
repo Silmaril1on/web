@@ -8,9 +8,9 @@ import Reel from "../../components/elivagar-parts/parts/Reel";
 const Commercial = () => {
   return (
     <div className="h-screen w-full relative ">
-      <Twinkles />
-      <RadioTrackListShowcase tracklist={true} />
-      {/* <Reel /> */}
+      {/* <Twinkles /> */}
+      {/* <RadioTrackListShowcase tracklist={true} /> */}
+      <Reel />
       {/* <SoundCloudPoster /> */}
       {/* <Shorts /> */}
     </div>
